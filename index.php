@@ -34,11 +34,17 @@
 			axios.get('/workshop/data.php')
 				.then(function  (response) {
 					console.log(response);
-					var html = template({
+					/*var html = template({
 						row: response.data
-					});
-					console.log(html);
-					document.getElementById('content').innerHTML = html;
+					});*/
+
+					var value = false;
+					if (response.data[0].value === "1") {
+						value = true;
+					};
+
+					console.log(response.data.value);
+					document.getElementById('content').innerHTML = value;
 				})
 				.catch(function  (reason) {
 					console.log(reason);

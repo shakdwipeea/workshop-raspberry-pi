@@ -1,7 +1,7 @@
 <?php 
 
 	$the_value = $_POST["value"];
-	echo "Number Name ".$the_value;
+	//echo "Number Name ".$the_value;
 
 	$server_name = "localhost";
 	$username = "root";
@@ -14,12 +14,12 @@
 		die("Connect failed");
 	}
 
-	echo "Connected Successfully";
+	//echo "Connected Successfully";
 
-	$sql = "INSERT INTO casandra (value) VALUES ($the_value)";
+	$sql = "UPDATE casandra SET value=$the_value WHERE id = 1";
 
 	if ($conn->query($sql) === TRUE) {
-		echo "Inserted";
+		echo "Toggled";
 	} else {
 		echo "Error";
 	}

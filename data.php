@@ -12,7 +12,7 @@
 		}
 
 
-		$sql = "SELECT * FROM casandra";
+		$sql = "SELECT value FROM casandra where id = 1";
 
 		$result = $conn->query($sql);
 
